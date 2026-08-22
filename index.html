@@ -172,6 +172,7 @@
   .status-gov{background:#1B5E4A1A; color:#124234;}
   .status-support{background:#9C7A2E1A; color:#7A5F22;}
   .status-opp{background:#13372A0D; color:var(--ink-soft); border:1px solid var(--line);}
+  #liveDataBadge{color:#1B5E4A; font-weight:600;}
 
   /* ---------- Detail overlay ---------- */
   .overlay{
@@ -315,13 +316,15 @@
     <h1 class="title">Åtta partier.<br>En <em>opartisk</em> genomgång.</h1>
     <p class="sub">Sveriges åtta riksdagspartier — vad de lovar i valet 2026, och vad de faktiskt gjort under mandatperioden. Samma frågor ställs till alla partier, i samma format, utan rangordning eller rekommendation.</p>
     <div class="header-meta">
-      <span>Uppdaterad: <strong>22 augusti 2026</strong></span>
+      <span>Opinionsdata: <strong id="pollUpdatedLabel">22 augusti 2026</strong></span>
       <span>Röstberättigade: <strong>~7,8 miljoner</strong></span>
       <span>Mandat i riksdagen: <strong>349</strong></span>
       <span>Spärr för representation: <strong>4,0 %</strong></span>
+      <span id="liveDataBadge" style="display:none;">🟢 <span id="liveDataText">Live data</span></span>
     </div>
     <div class="neutrality-box">
       <b>Om den här sidan.</b> Innehållet är sammanställt från partiernas egna valmanifest och pressmeddelanden, Riksdagens och Valmyndighetens officiella statistik, samt oberoende opinionsinstitut. Vallöften presenteras som just löften — inte fakta — och märks som partiernas egna ord. Där en siffra om regeringens resultat kommer från regeringen/partiet självt anges det. Sidan varken rankar eller rekommenderar något parti.
+      <p class="note" id="pollSourceNote" style="margin-top:10px;">Opinionssiffror hämtas automatiskt en gång per dag från Wikipedias sammanställning av svenska opinionsinstitut.</p>
     </div>
   </div>
 </header>
@@ -930,6 +933,46 @@ function renderBlocBar(){
 
 renderGrid();
 renderBlocBar();
+loadLivePollData();
+
+async function loadLivePollData(){
+  try {
+    // Cache-bust so browsers/CDNs don't serve a stale copy of the JSON.
+    const res = await fetch('./data/polls.json?ts=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    if (!data.parties) throw new Error('Malformed polls.json (no "parties" key)');
+
+    let appliedCount = 0;
+    PARTIES.forEach(p => {
+      const val = data.parties[p.id];
+      if (typeof val === 'number' && val >= 0 && val <= 60) {
+        p.poll2026.pct = val;
+        appliedCount++;
+      }
+    });
+
+    if (appliedCount === 0) throw new Error('No recognisable party values in polls.json');
+
+    // Reflect the live update in the header.
+    const badge = document.getElementById('liveDataBadge');
+    const label = document.getElementById('pollUpdatedLabel');
+    const text = document.getElementById('liveDataText');
+    if (data.updated_at) {
+      const d = new Date(data.updated_at);
+      label.textContent = d.toLocaleDateString('sv-SE', {year:'numeric', month:'long', day:'numeric'});
+    }
+    if (badge) badge.style.display = 'inline';
+    if (text) text.textContent = 'Automatiskt uppdaterad (' + (data.poll_date_label || 'okänt datum') + ')';
+
+    renderGrid();
+    renderBlocBar();
+  } catch (err) {
+    // Fail silently in the UI — the page already shows sensible baked-in
+    // numbers, we just skip the "live" badge and log for debugging.
+    console.warn('Could not load live poll data, showing baked-in figures instead:', err);
+  }
+}
 </script>
 
 </body>
